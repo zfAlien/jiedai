@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{:app_conf("SHOP_TITLE")} - {:l("SYSTEM_LOGIN")} </title>
+<script type="text/javascript">
+	//定义JS语言
+	var ADM_NAME_EMPTY = '{:l("ADM_NAME_EMPTY")}';
+	var ADM_PASSWORD_EMPTY = '{:l("ADM_PASSWORD_EMPTY")}';
+	var ADM_VERIFY_EMPTY = '{:l("ADM_VERIFY_EMPTY")}';
+	function resetwindow()
+	{
+		if(top.location != self.location)
+		{
+			top.location.href = self.location.href;
+			return 
+		}
+	}
+	resetwindow();
+</script>
+<style type="text/css">
+  #login-content p{height: 20px;clear: both;}
+</style>
+<load href='__TMPL__Common/style/login.css' />
+<load href='__TMPL__Common/style/reset_b.css' />
+<load href='__TMPL__Common/style/style_b.css' />
+<load href='__TMPL__Common/style/invalid_b.css' />
+<load href='__TMPL__Common/js/jquery.js' />
+<load href='__TMPL__Common/js/jquery.timer.js' />
+<load href='__TMPL__Common/js/login.js' />
+</head>
+<body id="login">
+<div id="login-wrapper" class="png_bg">
+  <div id="login-top">
+    <h1>Simpla Admin</h1>
+    <!-- Logo (221px width) -->
+    <a href="#"><img id="logo" src="/admin/public/images/logo.png" alt="Simpla Admin logo" /></a> </div>
+  <!-- End #logn-top -->
+  <div id="login-content">
+    <form action="{:u("Public/do_login")}">
+      <div class="notification information png_bg">
+        <div> Just click "Sign In". No password needed. </div>
+        <div id="login_msg"></div>
+      </div>
+      <p>
+        <label>用户名</label>
+        <input type="text"  name="adm_name" class="adm_name text-input"  />
+      </p>
+      <div class="clear"></div>
+      <p>
+        <label>密码</label>
+        <input type="password"  name="adm_password" class="adm_password text-input"  />
+      </p>
+      <p>
+        <label>验证码</label>
+        <input type="text" class="login_input adm_verify text-input" name="adm_verify"  />
+        
+      </p>
+     <p><img src="__ROOT__/verify.php"  id="verify" style="float:right;" /></p>
+      <div class="clear"></div>
+      <p>
+        <input class="button login_button submit" value="登陆" style="width:60px;" />
+      </p>
+    </form>
+  </div>
+  <!-- End #login-content -->
+</div>
+
+</body>
+</html>

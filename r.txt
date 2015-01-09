@@ -1,0 +1,1 @@
+如果需要自动发送还需要运行环境的支持（这个是空间商解决的问题，如果是VPS的话您可以自己修改PHP配置文件），要求如下：要求开通 fsockopen 函数功能要开启在php.ini 中开启以下项allow_url_fopen = onextension=php_openssl.dllextension=php_curl.dllextension=php_sockets.dllextension=php_soap.dll开启后要重启，IIS 或者阿帕奇
